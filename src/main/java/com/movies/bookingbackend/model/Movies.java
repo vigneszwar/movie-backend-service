@@ -1,7 +1,7 @@
 package com.movies.bookingbackend.model;
 import java.util.*;
 public class Movies {
-    private String Movie_name;
+    private String Movie_name;//movie
     private Date date;
     private String location;
     private int Movie_duration;

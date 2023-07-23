@@ -1,7 +1,13 @@
 package com.movies.bookingbackend.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class Reservation
 {
+    @Autowired
     private String customerName;
     private int totalTickets;
     private double price;
@@ -10,11 +16,11 @@ public class Reservation
 
     public Reservation(String customerName, int totalTickets, double price, String timing, int seatsAvailable)
     {
-        this.customerName = customerName;
-        this.totalTickets = totalTickets;
-        this.price = price;
-        this.timing = timing;
-        this.seatsAvailable = seatsAvailable;
+        this.customerName=customerName;
+        this.totalTickets=totalTickets;
+        this.price=price;
+        this.timing=timing;
+        this.seatsAvailable=seatsAvailable;
     }
     public String getCustomerName()
     {
@@ -22,7 +28,7 @@ public class Reservation
     }
     public void setCustomerName(String customerName)
     {
-        this.customerName = customerName;
+        this.customerName=customerName;
     }
     public int getTotalTickets()
     {
@@ -30,7 +36,7 @@ public class Reservation
     }
     public void setTotalTickets(int totalTickets)
     {
-        this.totalTickets = totalTickets;
+        this.totalTickets=totalTickets;
     }
     public double getPrice()
     {
@@ -38,7 +44,7 @@ public class Reservation
     }
     public void setPrice(double price)
     {
-        this.price = price;
+        this.price=price;
     }
     public String getTiming()
     {
@@ -46,7 +52,7 @@ public class Reservation
     }
     public void setTiming(String timing)
     {
-        this.timing = timing;
+        this.timing=timing;
     }
     public int getSeatsAvailable()
     {
@@ -54,7 +60,7 @@ public class Reservation
     }
     public void setSeatsAvailable(int seatsAvailable)
     {
-        this.seatsAvailable = seatsAvailable;
+        this.seatsAvailable=seatsAvailable;
     }
     public void displayReservation()
     {
@@ -63,11 +69,5 @@ public class Reservation
         System.out.println("Price per Ticket: $" + price);
         System.out.println("Timing: " + timing);
         System.out.println("Seats Available: " + seatsAvailable);
-    }
-
-    public static void main(String[] args)
-    {
-        Reservation reservation = new Reservation("John Doe", 3, 10.5, "10:00 AM", 50);
-        reservation.displayReservation();
     }
 }
